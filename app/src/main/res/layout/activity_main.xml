@@ -8,17 +8,65 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="@dimen/title_text_size"
-        android:padding="@dimen/title_padding"
-        android:textFontWeight="700"
-        android:textColor="@color/bg_light"
         android:background="@color/primary"
+        android:padding="@dimen/title_padding"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/bg_light"
+        android:textFontWeight="400"
+        android:textSize="@dimen/title_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/horizontal_margin"
+        android:layout_marginTop="20dp"
+        android:background="@color/primary"
+        android:padding="@dimen/h2_padding"
+        android:text="@string/task_menu_title"
+        android:textAlignment="center"
+        android:textColor="@color/bg_light"
+        android:textSize="@dimen/h2_text_size"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/horizontal_margin"
+        android:orientation="horizontal"
+
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="9dp">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:inputType="textNoSuggestions"
+            android:paddingHorizontal="@dimen/h2_padding"
+            android:hint="@string/add_task_hint"
+            />
+
+        <ImageButton
+            android:id="@+id/addTaskButton"
+            android:layout_width="@dimen/btn_icon"
+            android:layout_height="@dimen/btn_icon"
+            android:layout_gravity="center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/add_task"
+            android:src="@drawable/ic_add"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

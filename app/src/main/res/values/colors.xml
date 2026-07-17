@@ -4,6 +4,6 @@
     <color name="bg_light">#FFFFFFFF</color>
     <color name="bg_dark">#222222</color>
     <color name="primary">#0191FF</color>
-    <color name="secondary">#54BBFF</color>
-    <color name="accent">#FFD91B</color>
+    <color name="secondary">#A4DCFF</color>
+    <color name="accent">#FFC907</color>
 </resources>
