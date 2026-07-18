@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/appTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primary"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/taskTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/horizontal_margin"
@@ -37,26 +37,27 @@
         android:textAlignment="center"
         android:textColor="@color/bg_light"
         android:textSize="@dimen/h2_text_size"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/appTitle"
         tools:layout_editor_absoluteX="16dp" />
 
     <LinearLayout
+        android:id="@+id/createTaskLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/horizontal_margin"
         android:orientation="horizontal"
-
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/taskTitle"
         tools:layout_editor_absoluteX="9dp">
+
         <EditText
+            android:id="@+id/taskTextbox"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:autofillHints=""
-            android:inputType="textNoSuggestions"
-            android:paddingHorizontal="@dimen/h2_padding"
             android:hint="@string/add_task_hint"
-            />
+            android:inputType="textNoSuggestions"
+            android:paddingHorizontal="@dimen/h2_padding" />
 
         <ImageButton
             android:id="@+id/addTaskButton"
@@ -65,8 +66,18 @@
             android:layout_gravity="center_vertical"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/add_task"
-            android:src="@drawable/ic_add"
-            />
+            android:src="@drawable/ic_add" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/taskMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/error"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/createTaskLayout"
+        tools:layout_editor_absoluteX="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
