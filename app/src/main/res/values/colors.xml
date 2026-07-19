@@ -3,10 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="bg_light">#FFFFFFFF</color>
     <color name="bg_dark">#222222</color>
-    <color name="primary">#0191FF</color>
-    <color name="secondary">#A4DCFF</color>
-    <color name="tertiary">#777777</color>
-    <color name="accent">#FFC907</color>
-    <color name="success">#4CAF50</color>
-    <color name="error">#F44336</color>
+    <color name="primary">#283618</color>
+    <color name="secondary">#606C38</color>
+    <color name="tertiary">#FEFAE0</color>
+    <color name="accent">#BC6C25</color>
+    <color name="success">#606C38</color>
+    <color name="error">#DDA15E</color>
+    <color name="task_pending">#212121</color>
+    <color name="task_completed">#9E9E9E</color>
 </resources>

@@ -5,4 +5,6 @@
     <string name="add_task_hint">Escribir nueva tarea</string>
     <string name="task_message_failure">El título de la tarea no puede estar vacío</string>
     <string name="task_message_success">¡Tarea creada exitosamente!</string>
+    <string name="no_tasks_message">No hay tareas todavía - añade una para comenzar.</string>
+    <string name="delete_task">Eliminar tarea</string>
 </resources>

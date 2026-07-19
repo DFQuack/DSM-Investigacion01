@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.dsm_investigacion01.R.color
+import com.example.dsm_investigacion01.R.string
 import com.example.dsm_investigacion01.databinding.ActivityMainBinding
-import com.example.dsm_investigacion01.R.*
-import com.google.android.material.color.MaterialColors
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
