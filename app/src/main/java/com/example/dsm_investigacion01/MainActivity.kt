@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dsm_investigacion01.R.color
 import com.example.dsm_investigacion01.R.string
 import com.example.dsm_investigacion01.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -76,8 +77,8 @@ class MainActivity : AppCompatActivity() {
         binding.emptyTasksMessage.visibility = if (hasTasks) View.GONE else View.VISIBLE
     }
     private fun showMessage(text: String, colorRes: Int) {
-        binding.taskMessage.text = text
-        binding.taskMessage.setTextColor(ContextCompat.getColor(this, colorRes))
-        binding.taskMessage.visibility = View.VISIBLE
+        val snackbar = Snackbar.make(binding.root, text, Snackbar.LENGTH_SHORT)
+        snackbar.setTextColor(ContextCompat.getColor(this, colorRes))
+        snackbar.show()
     }
 }
