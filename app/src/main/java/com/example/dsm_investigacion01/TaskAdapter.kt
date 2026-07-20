@@ -17,8 +17,11 @@ class TaskAdapter(
     private val tasks: MutableList<Task>,
     // Funciones declaradas como propiedades. Unit indica que no devuelven nada.
     private val onTaskToggled: (Task, Boolean) -> Unit,
-    private val onTaskDeleted: (Task) -> Unit
+    private val onTaskDeleted: (Task) -> Unit,
+    private val onTaskClicked: (Task) -> Unit
 ) : ListAdapter<Task, TaskAdapter.TaskViewHolder>(TaskDiffCallback()) {
+
+
 
     /*
     * La clase no tiene brackets porque al colocar val en el parámetro, Kotlin lo interpreta así:
@@ -54,6 +57,7 @@ class TaskAdapter(
             binding.taskNameText.setTextColor(ContextCompat.getColor(context, R.color.task_pending))
         }
 
+        binding.root.setOnClickListener { onTaskClicked(task) }
         /*
         * Por convención, un parámetro lambda no usado se coloca como _
         * En este contexto, se refiere al checkbox presionado.

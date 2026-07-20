@@ -30,7 +30,13 @@ class MainActivity : AppCompatActivity() {
                 task.completed = isChecked
                 sortAndPersist()
             },
-            onTaskDeleted = { task -> deleteTask(task) }
+            onTaskDeleted = { task -> deleteTask(task) },
+            onTaskClicked = { task ->
+                val intent = Intent(this, PomodoroLogic::class.java).apply {
+                    putExtra("TASK_NAME", task.name)
+                }
+                startActivity(intent)
+            }
         )
 
         binding.taskRecyclerView.layoutManager = LinearLayoutManager(this)
