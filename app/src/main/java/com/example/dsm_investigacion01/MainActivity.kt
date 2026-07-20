@@ -1,5 +1,6 @@
 package com.example.dsm_investigacion01
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -45,6 +48,11 @@ class MainActivity : AppCompatActivity() {
                 binding.taskTextbox.text?.clear()
                 showMessage(getString(string.task_message_success), color.success)
             }
+        }
+
+        binding.btnIrPomodoro.setOnClickListener{
+            val intent = Intent(this, PomodoroLogic::class.java)
+            startActivity(intent)
         }
     }
 
