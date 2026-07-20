@@ -25,13 +25,17 @@ class PomodoroViewModel : ViewModel(){
 
     private val _isRunning = MutableStateFlow(false)
     val isRunning: StateFlow<Boolean> = _isRunning
-
+    private val _progress = MutableStateFlow(100)
+    val progress: StateFlow<Int> = _progress
 
     private fun startTimer(duration: Long){
         _isRunning.value = true
         timer = object : CountDownTimer(duration,1000){
             override fun onTick(milisUntilFinished: Long) {
                 _timeLeftMillis.value = milisUntilFinished
+                val totaltime = _currentState.value.timeInMs
+                val porcentage = ((milisUntilFinished.toDouble() / totaltime)* 100).toInt()
+                _progress.value = porcentage
             }
 
             override fun onFinish() {
@@ -41,6 +45,7 @@ class PomodoroViewModel : ViewModel(){
             }
         }.start()
     }
+
 
     private fun handlePhaseSwitch(){
         if (_currentState.value == PomodoroState.WORK)
@@ -68,8 +73,8 @@ class PomodoroViewModel : ViewModel(){
     private fun resetTimer(){
         timer?.cancel()
         _isRunning.value = false
-
         _timeLeftMillis.value = _currentState.value.timeInMs
+        _progress.value = 100
     }
     fun startPauseTimer(){
         if(_isRunning.value){

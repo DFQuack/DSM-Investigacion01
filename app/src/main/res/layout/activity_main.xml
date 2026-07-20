@@ -23,7 +23,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.052" />
 
     <TextView
         android:id="@+id/taskTitle"
@@ -96,21 +96,19 @@
         android:layout_marginHorizontal="@dimen/horizontal_margin"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskMessage"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="4dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnIrPomodoro"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/horizontal_margin"
-        android:layout_marginBottom="16dp"
-        android:text="Ir al Pomodoro"
-        android:backgroundTint="@color/primary"
-        android:textColor="@color/bg_light"
+        android:text="Ir A Cronometro Pomodoro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskRecyclerView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

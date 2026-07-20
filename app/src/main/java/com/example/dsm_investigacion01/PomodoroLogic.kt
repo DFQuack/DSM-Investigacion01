@@ -1,5 +1,6 @@
 package com.example.dsm_investigacion01
 
+import android.content.Intent
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +40,12 @@ class PomodoroLogic : AppCompatActivity(){
             }
         }
         lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED)
+            {
+             viewModel.progress.collect { porcentaje -> binding.pomodoroProgressBar.progress = porcentaje }
+            }
+        }
+        lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.currentState.collect { state ->
                     binding.tvPhaseStatus.text = state.displayName
@@ -46,6 +53,9 @@ class PomodoroLogic : AppCompatActivity(){
             }
         }
 
-
+    binding.btnVolverPrincipal.setOnClickListener {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
     }
     }
